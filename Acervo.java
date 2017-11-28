@@ -40,16 +40,17 @@ public class Acervo {
 	public void procurarObras(String nome) {
 		System.out.printf("--> Procurando por obras com nome: %s\n", nome);
 		for(int i = 0; i < obras.size(); i++) {
-			if(obras.get(i).desc.nome == nome) {
-				System.out.printf("id: %d, emprestada: %d\n", obras.get(i).id, obras.get(i).emprestada);
+			if(obras.get(i).desc.nome.equals(nome)) {
+				System.out.printf("id: %d, emprestada: %b\n", obras.get(i).id, obras.get(i).emprestada);
 			}
 		}
+		return;
 	}
 	
 	public int procurarNumObras(String nome) {
 		System.out.printf("--> Procurando por numero de obras com nome: %s\n", nome);
 		for(int i = 0; i < obras.size(); i++) {
-			if(obras.get(i).desc.nome == nome) {
+			if(obras.get(i).desc.nome.equals(nome)) {
 				System.out.printf("O numero de obras com nome %s foi: %d\n", nome, obras.get(i).desc.num_obras);
 				return obras.get(i).desc.num_obras;
 			}

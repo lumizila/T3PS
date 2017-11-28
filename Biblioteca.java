@@ -41,7 +41,7 @@ public class Biblioteca {
 	public Usuario procurarUsuario(String email){
 		System.out.printf("--> Procurando usuario com email %s\n", email);
 		for(int i = 0; i < usuarios.size(); i++) {
-			if(usuarios.get(i).email == email) {
+			if(usuarios.get(i).email.equals(email)) {
 				System.out.println("Usuario encontrado");
 				return usuarios.get(i);
 			}

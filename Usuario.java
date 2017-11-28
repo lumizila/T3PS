@@ -41,15 +41,16 @@ public class Usuario {
 		return -1;
 	}
 	
-	public boolean pagar(int id, int valor) {
+	public void pagar(int id, int valor) {
 		for(int i = 0; i < emprestimos.size(); i++) {
 			Emprestimo emp = emprestimos.get(i);
 			if(emp.obra.id == id) {
-				return emp.pagaMulta(valor);
+				emp.pagaMulta(valor);
+				return;
 			}
 		}
 		System.out.println("Nao existe obra emprestada com esse id");
-		return false;
+		return;
 	}
 	
 	public void terminaEmprestimo(int id) {

@@ -13,7 +13,7 @@ abstract class Obra{
 	public void adicionaDescricao(String nome, int ano, ArrayList<Descricao> descricoes) {
 		for(int i = 0; i < descricoes.size(); i++) {
 			//se ja existe descricao assim, entao
-			if(descricoes.get(i).nome == nome && descricoes.get(i).ano == ano) {
+			if(descricoes.get(i).nome.equals(nome) && descricoes.get(i).ano == ano) {
 				desc = descricoes.get(i);
 			}
 		}
