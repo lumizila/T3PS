@@ -20,11 +20,21 @@ public class Usuario {
 		this.idade = idade;
 	}
 	
+	public Boolean checaEmprestimos(){
+		return emprestimos.isEmpty();
+	}
+	
 	//retorna o valor da multa caso o usuario tenha emprestado obra com id = id
 	public int checaEmprestimo(int id) {
 		for(int i = 0; i < emprestimos.size(); i++) {
 			if(emprestimos.get(i).obra.id == id) {
-				return emprestimos.get(i).calculaMulta();
+				int multa = emprestimos.get(i).calculaMulta();
+				if(multa == 0){
+					this.terminaEmprestimo(id);
+					return 0;
+				}else{
+					return multa;
+				}
 			}
 		}
 		System.out.println("Nao existe obra emprestada com esse id");

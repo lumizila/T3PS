@@ -1,9 +1,12 @@
 import java.util.ArrayList;
 
-public class Obra{
+abstract class Obra{
 	public int id;
 	public boolean emprestada;
 	public Descricao desc = null;
+	
+	public void editarLivro(String nome, int ano, String autor, String editora){};
+	public void editarPeriodico(String nome, int ano, String volume, int mes){};
 	
 	//este metodo primeiro vai checar se ja existe descricao com esses
 	//dados, se nao existe deve criar uma descricao
@@ -24,4 +27,12 @@ public class Obra{
 		desc.incrementaDescricao();
 	}
 	
+	public boolean checaObra(){
+		if(emprestada){
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
 }
